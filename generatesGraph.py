@@ -38,13 +38,13 @@ countryCases = cases['Country/Region']
 confirmed = cases['Confirmed']
 
 plt.style.use("ggplot")
-plt.figure(figsize=(20, 12))
+plt.figure(figsize=(20, 8))
 
 plt.subplot(2, 2, 1)
 plt.barh(countryCases, confirmed, color=colorOne)
 plt.title('10 países com o maior número de casos confirmados pelo Covid-19'.upper())
-plt.ylabel('Número de Casos'.upper())
-plt.xlabel('Países'.upper())
+plt.xlabel('Número de Casos'.upper())
+plt.ylabel('Países'.upper())
 
 
 for i, v in enumerate(confirmed):
@@ -66,8 +66,8 @@ confirmedRecovered = recovered['Recovered']
 plt.subplot(2, 2, 2)
 plt.barh(countryRecovered, confirmedRecovered, color=colorTwo)
 plt.title('10 países com o maior número de casos de recuperados do Covid-19'.upper())
-plt.ylabel('Número de Casos'.upper())
-plt.xlabel('Países'.upper())
+plt.xlabel('Número de Casos'.upper())
+plt.ylabel('Países'.upper())
 
 
 for i, v in enumerate(confirmedRecovered):
@@ -90,8 +90,8 @@ confirmedDeaths = deaths['Deaths']
 plt.subplot(2, 2, 3)
 plt.barh(countryDeaths, confirmedDeaths, color=colorThree)
 plt.title('10 países com maior número de casos de mortes pelo Covid-19'.upper())
-plt.ylabel('Número de Mortes'.upper())
-plt.xlabel('Países'.upper())
+plt.xlabel('Número de Mortes'.upper())
+plt.ylabel('Países'.upper())
 
 
 for i, v in enumerate(confirmedDeaths):
