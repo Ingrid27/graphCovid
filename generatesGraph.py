@@ -2,10 +2,11 @@ import matplotlib
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-
+from datetime import date
 
 
 #reading git data
+#data = pd.read_csv("../covid-19/data/time-series-19-covid-combined.csv")
 data = pd.read_csv("https://raw.githubusercontent.com/datasets/covid-19/master/data/time-series-19-covid-combined.csv")
 
 
@@ -31,20 +32,22 @@ Confirmed cases:
 casesIn = data.sort_values(['Date', 'Confirmed'], ascending=False).head(10)
 cases = casesIn.sort_values(['Date', 'Confirmed']).tail(10)
 
-print ("\nlista dos 10 países com maior número de casos confirmados pelo Covid-19:".upper())
+print ("lista dos 10 países com maior número de casos confirmados pelo Covid-19:".upper())
 print(casesIn)
 
 countryCases = cases['Country/Region']
 confirmed = cases['Confirmed']
 
+
+
 plt.style.use("ggplot")
-plt.figure(figsize=(20, 8))
+plt.figure(figsize=(20, 10))
 
 plt.subplot(2, 2, 1)
 plt.barh(countryCases, confirmed, color=colorOne)
-plt.title('10 países com o maior número de casos confirmados pelo Covid-19'.upper())
+plt.title('\n10 países com o maior número de casos confirmados pelo Covid-19'.upper())
 plt.xlabel('Número de Casos'.upper())
-plt.ylabel('Países'.upper())
+plt.ylabel('Países\n'.upper())
 
 
 for i, v in enumerate(confirmed):
@@ -65,9 +68,9 @@ confirmedRecovered = recovered['Recovered']
 
 plt.subplot(2, 2, 2)
 plt.barh(countryRecovered, confirmedRecovered, color=colorTwo)
-plt.title('10 países com o maior número de casos de recuperados do Covid-19'.upper())
+plt.title('\n10 países com o maior número de casos de recuperados do Covid-19'.upper())
 plt.xlabel('Número de Casos'.upper())
-plt.ylabel('Países'.upper())
+plt.ylabel('Países\n'.upper())
 
 
 for i, v in enumerate(confirmedRecovered):
@@ -89,15 +92,15 @@ confirmedDeaths = deaths['Deaths']
 
 plt.subplot(2, 2, 3)
 plt.barh(countryDeaths, confirmedDeaths, color=colorThree)
-plt.title('10 países com maior número de casos de mortes pelo Covid-19'.upper())
+plt.title('\n10 países com maior número de casos de mortes pelo Covid-19'.upper())
 plt.xlabel('Número de Mortes'.upper())
-plt.ylabel('Países'.upper())
+plt.ylabel('Países\n'.upper())
 
 
 for i, v in enumerate(confirmedDeaths):
     plt.text(v, i, " "+str(v), va='center', fontweight='bold')
 
 
-plt.savefig('confirmed.jpg')
+plt.savefig('graph.jpg')
 plt.tight_layout()
 plt.show()
