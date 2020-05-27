@@ -32,7 +32,7 @@ Confirmed cases:
 casesIn = data.sort_values(['Date', 'Confirmed'], ascending=False).head(10)
 cases = casesIn.sort_values(['Date', 'Confirmed']).tail(10)
 
-#ultima data
+#Last date
 dateAt=casesIn.head(1).iloc[0][0]
 
 print('\nUltima atualização: {}'.format(dateAt).upper())
