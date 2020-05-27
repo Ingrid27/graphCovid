@@ -51,7 +51,7 @@ plt.figure(figsize=(20, 15))
 plt.subplot(2, 2, 1)
 plt.barh(countryCases, confirmed, color=colorOne)
 plt.title('\n10 países com o maior número de casos confirmados pelo Covid-19'.upper())
-plt.xlabel('Número de Casos\nUltima atualização: {}\n'.format(dateAt).upper(), fontSize = 12)
+plt.xlabel('Número de Casos\nÚltima atualização: {}\n'.format(dateAt).upper(), fontSize = 12)
 plt.ylabel('Países\n'.upper())
 
 
@@ -74,7 +74,7 @@ confirmedRecovered = recovered['Recovered']
 plt.subplot(2, 2, 2)
 plt.barh(countryRecovered, confirmedRecovered, color=colorTwo)
 plt.title('\n10 países com o maior número de casos de recuperados do Covid-19'.upper())
-plt.xlabel('Número de Casos\nUltima atualização: {}'.format(dateAt).upper())
+plt.xlabel('Número de Casos\nÚltima atualização: {}'.format(dateAt).upper())
 plt.ylabel('Países\n'.upper())
 
 
@@ -98,7 +98,7 @@ confirmedDeaths = deaths['Deaths']
 plt.subplot(2, 2, 3)
 plt.barh(countryDeaths, confirmedDeaths, color=colorThree)
 plt.title('\n10 países com maior número de casos de mortes pelo Covid-19'.upper())
-plt.xlabel('Número de Mortes\nUltima atualização: {}'.format(dateAt).upper())
+plt.xlabel('Número de Mortes\nÚltima atualização: {}'.format(dateAt).upper())
 plt.ylabel('Países\n'.upper())
 
 
