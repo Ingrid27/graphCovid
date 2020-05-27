@@ -32,7 +32,12 @@ Confirmed cases:
 casesIn = data.sort_values(['Date', 'Confirmed'], ascending=False).head(10)
 cases = casesIn.sort_values(['Date', 'Confirmed']).tail(10)
 
-print ("lista dos 10 países com maior número de casos confirmados pelo Covid-19:".upper())
+#ultima data
+dateAt=casesIn.head(1).iloc[0][0]
+
+print('\nUltima atualização: {}'.format(dateAt).upper())
+
+print ("\nlista dos 10 países com maior número de casos confirmados pelo Covid-19:".upper())
 print(casesIn)
 
 countryCases = cases['Country/Region']
@@ -41,12 +46,12 @@ confirmed = cases['Confirmed']
 
 
 plt.style.use("ggplot")
-plt.figure(figsize=(20, 10))
+plt.figure(figsize=(20, 15))
 
 plt.subplot(2, 2, 1)
 plt.barh(countryCases, confirmed, color=colorOne)
 plt.title('\n10 países com o maior número de casos confirmados pelo Covid-19'.upper())
-plt.xlabel('Número de Casos'.upper())
+plt.xlabel('Número de Casos\nUltima atualização: {}\n'.format(dateAt).upper(), fontSize = 12)
 plt.ylabel('Países\n'.upper())
 
 
@@ -69,7 +74,7 @@ confirmedRecovered = recovered['Recovered']
 plt.subplot(2, 2, 2)
 plt.barh(countryRecovered, confirmedRecovered, color=colorTwo)
 plt.title('\n10 países com o maior número de casos de recuperados do Covid-19'.upper())
-plt.xlabel('Número de Casos'.upper())
+plt.xlabel('Número de Casos\nUltima atualização: {}'.format(dateAt).upper())
 plt.ylabel('Países\n'.upper())
 
 
@@ -93,7 +98,7 @@ confirmedDeaths = deaths['Deaths']
 plt.subplot(2, 2, 3)
 plt.barh(countryDeaths, confirmedDeaths, color=colorThree)
 plt.title('\n10 países com maior número de casos de mortes pelo Covid-19'.upper())
-plt.xlabel('Número de Mortes'.upper())
+plt.xlabel('Número de Mortes\nUltima atualização: {}'.format(dateAt).upper())
 plt.ylabel('Países\n'.upper())
 
 
