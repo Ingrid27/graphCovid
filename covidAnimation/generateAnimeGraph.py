@@ -19,7 +19,7 @@ csv_file.write(url_content)
 csv_file.close()
 
 #reading data
-covid = pd.read_csv('covid19.csv')
+covid = pd.read_csv('covidAnimation/covid19.csv')
 covid = covid[["Date", "Country/Region", "Confirmed", "Recovered", "Deaths"]]
 
 # grouping the count of cases in the countries by date
