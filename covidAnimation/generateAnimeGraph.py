@@ -39,7 +39,7 @@ plt.style.use("ggplot")
 fig, ax =  plt.subplots(figsize = (20, 12))
 
 #confirmed cases method
-def confirmedBarChart(dateTime, case = "Confirmed"):
+def confirmedBarChart(dateTime, case = "Deaths"):
     # New dataframe for make the animation
     dfConfirmed = (
         covidConfirmed[covidConfirmed['Date'].eq(dateTime)].sort_values(by=case, ascending=False).head(10))
@@ -57,8 +57,18 @@ def confirmedBarChart(dateTime, case = "Confirmed"):
     countryCases = dfConfirmed['Country/Region']
     confirmed = dfConfirmed['Confirmed']
 
+    if case == "Confirmed":
+        ax.set_title('\n10 países com o maior número de casos confirmados pelo Covid-19')
+        confirmed = dfConfirmed['Confirmed']
+    elif case == "Recovered":
+        ax.set_title('\n10 países com o maior número de casos de recuperados do Covid-19')
+        confirmed = dfConfirmed['Recovered']
+
+    elif case == "Deaths":
+        ax.set_title('\n10 países com o maior número de casos de mortes pelo Covid-19')
+        confirmed = dfConfirmed['Deaths']
+
     plt.style.use("ggplot")
-    ax.set_title('\n10 países com o maior número de casos confirmados pelo Covid-19')
     dx = dfConfirmed[case].max() / 200
 
     for i, v in enumerate(confirmed):
@@ -79,9 +89,8 @@ def confirmedBarChart(dateTime, case = "Confirmed"):
     print("DATA DA ÚLTIMA ATUALIZAÇÃO DE DADOS: {}".format(dateAt))
 
 
-
 confirmedBarChart(dateAt)
 
 animator = anime.FuncAnimation(fig,confirmedBarChart,frames=covid.Date.unique(), interval=400, blit=False, repeat=False)
-animator.save('covidAnimation/cases_video.mp4')
+animator.save('covidAnimation/deaths_video.mp4')
 plt.show()
