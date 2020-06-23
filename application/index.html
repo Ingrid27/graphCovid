@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Covid-19 in the world</title>
+    
+</head>
+<body>
+    <header>
+        <p>COVID-19 IN THE WORLD</p>
+    </header>
+
+    <section>
+        <div class="deaths">
+            <p>countries with the highest numbers of deaths</p>
+            <video id="videoA" autoplay preload="metadata">
+                <source src="../covidAnimation/Deaths_video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div style="text-align: center;">
+                <button onclick="document.getElementById('videoA').play()"><i class="fa fa-play"></i></button>
+                <button onclick="document.getElementById('videoA').pause()"><i class="fa fa-pause"></i></button>
+            </div>
+        </div>
+        <div class="subSection">
+            <div id="confirmed">
+                <p>countries with the highest number of cases</p>
+                <video id="videoB" autoplay>
+                    <source src="../covidAnimation/Confirmed_video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div style="text-align: center;">
+                    <button onclick="document.getElementById('videoB').play()"><i class="fa fa-play"></i></button>
+                    <button onclick="document.getElementById('videoB').pause()"><i class="fa fa-pause"></i></button>
+                </div>
+            </div>
+            <div id="recovered">
+                <p>countries with the highest number of recovered cases</p>
+                <video id="videoC" autoplay>
+                    <source src="../covidAnimation/Recovered_video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div style="text-align: center;">
+                    <button onclick="document.getElementById('videoC').play()"><i class="fa fa-play"></i></button>
+                    <button onclick="document.getElementById('videoC').pause()"><i class="fa fa-pause"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
