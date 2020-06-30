@@ -20,7 +20,7 @@ a = "Confirmed"
 b = "Recovered"
 c = "Deaths"
 
-case = b
+case = c
 
 dfCovidBcr = pd.DataFrame(covid.groupby(["Country/Region","Date"]).sum()[case]).unstack().T.droplevel(level=0)
 

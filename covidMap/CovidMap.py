@@ -48,4 +48,4 @@ fig = px.choropleth(data_frame = df1,
 
 #py.iplot(fig, filename=case)
 
-pyoff.plot(fig, filename='map'+case+'.html')
+pyoff.plot(fig, filename='./covidMap/map'+case+'.html')
