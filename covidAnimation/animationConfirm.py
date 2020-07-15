@@ -26,13 +26,13 @@ dfCovidBcr = pd.DataFrame(covid.groupby(["Country/Region","Date"]).sum()[case]).
 
 fig = bcr.bar_chart_race(dfCovidBcr, 
                     './covidAnimation/'+case+'_video.mp4',
+                    title='COUNTRIES WITH THE HIGHEST NUMBERS OF CASES',
                     bar_label_size=10, 
                     tick_label_size=10,
                     n_bars=10, 
                     filter_column_colors = True,
                     cmap= 'dark24',
                     period_label={'x': .99, 'y': .1, 'ha': 'right', 'color': 'black', 'size': 20},
-                    #title="10 países com o maior número de casos de recuperados do Covid-19".upper(), 
                     #steps_per_period=10,
                     period_length=400,
                     #figsize=(10, 3), =====> a
